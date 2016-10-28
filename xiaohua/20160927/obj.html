@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+	<script>
+		function obj(a, b) {
+			//私有变量
+			var c = 1;
+			//公有变量
+			this.a = a;
+			this.b = c;
+			console.log('123');
+			(function(){
+				alert("这个对象已经生成了")
+			})()
+			
+			/*this.add = function(){
+				console.log("add")
+			}*/
+		}
+		function obj2(){
+			this.d = "d"
+		}
+		obj.prototype.add = function(){
+			console.log("add")
+		}
+		obj.prototype.child = new obj2()
+		console.log(new obj(1,2))
+		//var o = new obj(1,2)
+		//o.add()
+		//new obj(1, 2)
+			//obj(1,2)
+			/*{
+				a:1,
+				b:2
+			}*/
+	</script>
+
+</html>
